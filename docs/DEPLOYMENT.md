@@ -102,6 +102,9 @@ main / (root)
 ```text
 姓名：陈俊强
 学号：PB24061348
-个人主页网址：部署后填写
-网页的 HTTP 版本号：实际检查后填写
+个人主页网址：https://jqchen-another.github.io/PB24061348-network-lab1/
+网页的 HTTP 版本号：HTTP/2（h2）
 ```
+
+> 本工程已于 2026-09-30 完成部署，上述两项为实测填写值。
+> 个人主页仓库：https://github.com/jqchen-another/PB24061348-network-lab1
