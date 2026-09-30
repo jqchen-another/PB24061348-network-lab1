@@ -28,7 +28,8 @@ check("contains images", len(img_tags) >= 3, f"img_tags={len(img_tags)}")
 svg_count = len(list((ROOT / "assets" / "images").glob("*.svg")))
 check("local image assets", svg_count >= 3, f"svg_files={svg_count}")
 
-required_identity = ["陈俊强", "PB24061348", "中国科学技术大学", "人工智能"]
+# 公开页面上只展示姓名与学校/专业，学号不对外显示
+required_identity = ["陈俊强", "中国科学技术大学", "人工智能"]
 check("identity information", all(x in index for x in required_identity))
 
 check("responsive CSS", "@media" in css)

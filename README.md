@@ -1,30 +1,25 @@
-# PB24061348-陈俊强-计网实验一
+# network-lab1
 
-> 中国科学技术大学 · 人工智能专业  
-> 学生：陈俊强  
-> 学号：PB24061348
+> 中国科学技术大学 · 人工智能专业 · 陈俊强
 
-这是“计算机网络实验一：静态网页制作”的完整工程。
+个人主页的静态站点工程。纯 HTML + CSS + 原生 JavaScript，没有构建步骤，直接部署在 GitHub Pages 上。
 
 ## 1. 项目特点
 
-- 纯静态工程：HTML + CSS + 少量原生 JavaScript
-- 无第三方框架、无 CDN 依赖、无构建步骤
+- 纯静态：无第三方框架、无 CDN 依赖、无构建步骤
 - 响应式布局：桌面 / 平板 / 手机均可正常浏览
-- 支持明暗主题
+- 支持明暗主题切换，跟随 `prefers-color-scheme`
 - 支持移动端导航
 - 支持 `prefers-reduced-motion`
 - 包含独立博客页面
-- 包含至少 3 个外部超链接
-- 包含多张本地图片（SVG）
+- 包含多个外部超链接与本地 SVG 图片
 - 附带 GitHub Pages 自动部署工作流
 - 附带本地静态检查脚本
-- 附带实验提交模板与 HTTP 协议版本检查说明
 
 ## 2. 目录结构
 
 ```text
-PB24061348-陈俊强-计网实验一/
+network-lab1/
 ├─ index.html
 ├─ 404.html
 ├─ robots.txt
@@ -45,9 +40,7 @@ PB24061348-陈俊强-计网实验一/
 │     ├─ project-web.svg
 │     └─ blog-cover.svg
 ├─ docs/
-│  ├─ DEPLOYMENT.md
-│  ├─ SUBMISSION_TEMPLATE.md
-│  └─ REQUIREMENTS_TRACEABILITY.md
+│  └─ DEPLOYMENT.md
 ├─ scripts/
 │  └─ validate.py
 ├─ .github/
@@ -63,7 +56,7 @@ PB24061348-陈俊强-计网实验一/
 
 双击 `index.html` 即可。
 
-### 方法 B：推荐，使用本地 HTTP 服务
+### 方法 B：使用本地 HTTP 服务
 
 在工程根目录运行：
 
@@ -93,19 +86,4 @@ python scripts/validate.py
 docs/DEPLOYMENT.md
 ```
 
-本项目已包含 GitHub Pages 的 GitHub Actions 工作流。
-
-## 6. 实验提交
-
-最终提交文件中需要填写：
-
-- 姓名：陈俊强
-- 学号：PB24061348
-- 个人主页网址：部署后填写
-- 网页 HTTP 版本号：部署后检查填写
-
-模板见：
-
-```text
-docs/SUBMISSION_TEMPLATE.md
-```
+本项目已包含 GitHub Pages 的 GitHub Actions 工作流，推送到 `main` 后自动部署。

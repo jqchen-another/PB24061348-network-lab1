@@ -1,42 +1,28 @@
 # 部署与 HTTP 协议版本检查
 
-## 一、推荐方案：GitHub Pages
+## 一、GitHub Pages 部署
 
-### 方案 A：使用自动部署工作流
+### 方案 A：使用自动部署工作流（推荐）
 
-1. 登录 GitHub。
-2. 新建公开仓库，例如：
-
-```text
-PB24061348-network-lab1
-```
-
-3. 将本工程全部文件上传到仓库。
-4. 打开仓库：
+1. 登录 GitHub，新建公开仓库。
+2. 将本工程全部文件推送到仓库。
+3. 打开仓库的：
 
 ```text
 Settings -> Pages
 ```
 
-5. 在 **Build and deployment** 中选择：
+4. 在 **Build and deployment** 中选择：
 
 ```text
 Source: GitHub Actions
 ```
 
-6. 推送代码后，仓库中的 `.github/workflows/pages.yml` 会自动执行部署。
-7. 部署完成后，GitHub Pages 会给出公开网址。
-
-如果仓库名是：
+5. 推送代码后，仓库中的 `.github/workflows/pages.yml` 会自动执行部署。
+6. 部署完成后，GitHub Pages 会给出公开网址，形如：
 
 ```text
-PB24061348-network-lab1
-```
-
-网址通常类似：
-
-```text
-https://你的GitHub用户名.github.io/PB24061348-network-lab1/
+https://<你的GitHub用户名>.github.io/<仓库名>/
 ```
 
 ### 方案 B：从 main 分支直接部署
@@ -63,8 +49,6 @@ main / (root)
 
 ## 二、检查网页实际使用的 HTTP 版本
 
-不要在部署前提前填写协议版本。
-
 推荐使用 Chrome / Edge：
 
 1. 打开已经部署好的网页。
@@ -82,29 +66,10 @@ main / (root)
 - `h3`：HTTP/3
 - `http/1.1`：HTTP/1.1
 
-**必须以你部署后浏览器实际显示的结果为准。**
+也可以直接在 `Console` 里执行：
 
----
-
-## 三、建议截图
-
-为了实验报告更完整，建议保留两张截图：
-
-1. 已部署网页首页截图。
-2. DevTools `Network` 面板中带有 `Protocol` 列的截图。
-
----
-
-## 四、最终提交信息
-
-最终 PDF / DOC / DOCX 中填写：
-
-```text
-姓名：陈俊强
-学号：PB24061348
-个人主页网址：https://jqchen-another.github.io/PB24061348-network-lab1/
-网页的 HTTP 版本号：HTTP/2（h2）
+```js
+performance.getEntriesByType('navigation')[0].nextHopProtocol
 ```
 
-> 本工程已于 2026-09-30 完成部署，上述两项为实测填写值。
-> 个人主页仓库：https://github.com/jqchen-another/PB24061348-network-lab1
+两个来源结果应当一致；以浏览器实际显示的结果为准。

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="从一个静态网页开始理解 Web：陈俊强的计算机网络实验博客。">
+  <meta name="description" content="从一个静态网页开始理解 Web：HTML、CSS 与 HTTP 的一点学习笔记。">
   <meta name="theme-color" content="#0b1220">
   <title>从一个静态网页开始理解 Web · 陈俊强</title>
   <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
@@ -38,9 +38,10 @@
       <img class="article-cover" src="../assets/images/blog-cover.svg" alt="HTML 页面通过 HTTP 传输到浏览器的示意图" width="1000" height="560">
 
       <p>
-        这次计算机网络实验让我从“使用网页”走到了“制作网页”。表面上看，
-        HTML 负责内容、CSS 负责样式、JavaScript 负责交互；但真正把页面放到网络上以后，
-        才会自然地追问：浏览器到底如何拿到这些文件？服务器又通过什么协议把它们返回给我？
+        之前我基本只是在使用网页，这次自己从头搭了一遍，才开始注意浏览器背后实际发生了什么。
+        表面上看，HTML 负责内容、CSS 负责样式、JavaScript 负责交互；
+        但把页面放到网络上以后，就会冒出新问题：浏览器到底怎么拿到这些文件？
+        服务器又用什么协议把它们返回给我？
       </p>
 
       <h2>1. HTML 是页面的骨架</h2>
@@ -72,30 +73,25 @@
 
       <h2>5. 从 HTTP/1.1 到 HTTP/2、HTTP/3</h2>
       <p>
-        本次实验 PPT 从 HTTP/1.0、HTTP/1.1 讲到 HTTP/2 与 HTTP/3。
-        把网站真正部署之后，我可以直接观察托管平台最终协商使用了哪一个版本，
-        这样协议就不再只是课件上的名词，而是浏览器里能够看到的真实行为。
+        HTTP 从 1.0、1.1 到 HTTP/2、HTTP/3，一直在解决连接开销、并发和延迟这些问题。
+        网站部署之后可以直接看到托管平台最终协商用了哪个版本，
+        这时候协议就不只是书上的名词，而是浏览器里能观察到的真实行为。
       </p>
 
-      <h2>6. 一个小实验带来的连接</h2>
+      <h2>6. 一点体会</h2>
       <p>
-        做完这个页面以后，HTML/CSS 与计算机网络不再是两块完全分开的知识：
-        页面是应用层内容，HTTP 是传输这些内容的应用层协议，而 TCP/QUIC、IP 与链路层继续在下面完成通信。
-        一个简单网页，恰好把“应用”与“网络”连接了起来。
+        做完这个页面以后，HTML/CSS 和计算机网络这两块知识算是接上了：
+        页面是应用层的内容，HTTP 负责把它传过去，
+        再往下还有 TCP/QUIC、IP 和链路层在干活。一个很简单的网页，
+        其实把整条链路都串了一遍。
       </p>
-
-      <aside class="article-note">
-        <strong>部署之后要完成的最后一步：</strong>
-        打开浏览器开发者工具 → Network → 显示 Protocol 列 → 刷新页面，
-        记录主页 HTML 请求对应的 HTTP 协议版本。
-      </aside>
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-shell">
       <span>© <span data-year></span> 陈俊强</span>
-      <span>PB24061348 · USTC</span>
+      <span>USTC · Artificial Intelligence</span>
     </div>
   </footer>
 
