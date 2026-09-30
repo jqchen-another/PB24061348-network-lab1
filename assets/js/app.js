@@ -1,5 +1,4 @@
 (() => {
-  const root = document.documentElement;
   const body = document.body;
 
   const savedTheme = localStorage.getItem("theme");
